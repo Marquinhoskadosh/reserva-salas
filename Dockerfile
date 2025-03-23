@@ -1,14 +1,15 @@
-# Usando uma imagem do OpenJDK 21 para rodar a aplicação
-FROM eclipse-temurin:21-jdk
-
-# Criando diretório de trabalho
+# Usa uma imagem do Maven para compilar o código
+FROM maven:3.8.7-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn -B clean package -DskipTests
 
-# Copiando o JAR gerado pelo build do Quarkus
-COPY target/*-runner.jar app.jar
+# Usa uma imagem do JDK para rodar a aplicação
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY --from=build /app/target/*-runner.jar app.jar
 
-# Expondo a porta que a aplicação usa
+# Expor a porta (ajuste se necessário)
 EXPOSE 8080
-
-# Comando para rodar a aplicação
 CMD ["java", "-jar", "app.jar"]
+
