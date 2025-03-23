@@ -1,8 +1,9 @@
+# Ignora tudo por padrão
 *
-!target/*-runner
-!target/*-runner.jar
-!target/lib/*
-!target/quarkus-app/*
-.nixpacks/
-target/
-.m2/
+
+# Permite os arquivos essenciais para o build
+!pom.xml
+!src/
+!mvnw
+!mvnw.cmd
+
