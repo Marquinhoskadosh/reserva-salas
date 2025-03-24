@@ -7,18 +7,20 @@ public class Reserva {
     public String periodo;
     public String usuario;
     public String geracao;
+    public String motivo;
 
     // Construtor vazio (necessário para deserialização)
     public Reserva() {
     }
 
-    public Reserva(int id, String sala, String data, String periodo, String usuario, String geracao) {
+    public Reserva(int id, String sala, String data, String periodo, String usuario, String geracao, String motivo) {
         this.id = id;
         this.sala = sala;
         this.data = data;
         this.periodo = periodo;
         this.usuario = usuario;
         this.geracao = geracao;
+        this.motivo = motivo;
     }
 
     public int getId() {
@@ -68,4 +70,13 @@ public class Reserva {
     public void setGeracao(String geracao) {
         this.geracao = geracao;
     }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
 }
+

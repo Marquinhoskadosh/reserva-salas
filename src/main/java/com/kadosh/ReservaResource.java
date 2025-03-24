@@ -99,6 +99,7 @@ public class ReservaResource {
                 reservaParaAtualizar.setSala(reservaEditada.getSala());
                 reservaParaAtualizar.setData(reservaEditada.getData());
                 reservaParaAtualizar.setPeriodo(reservaEditada.getPeriodo());
+                reservaParaAtualizar.setMotivo(reservaEditada.getMotivo());
 
                 // Salvar no arquivo JSON
                 salvarReservas(reservas);
