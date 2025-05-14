@@ -14,7 +14,8 @@ import java.util.Optional;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ReservaResource {
-    private static final String JSON_FILE = "reservas.json";
+    
+    private static final String JSON_FILE = "/tmp/reservas.json";
     private static final ObjectMapper mapper = new ObjectMapper();
 
     private List<Reserva> carregarReservas() throws IOException {
