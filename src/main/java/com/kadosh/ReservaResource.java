@@ -19,7 +19,7 @@ public class ReservaResource {
 
     @GET
     public Response listarReservas() {
-        List<Reserva> reservas = reservaRepo.listAll();
+        List<Reserva> reservas = reservaRepo.list("ORDER BY data ASC");
         return Response.ok(reservas).build();
     }
 
