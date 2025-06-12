@@ -40,3 +40,4 @@ public class Reserva {
     public String getMotivo() { return motivo; }
     public void setMotivo(String motivo) { this.motivo = motivo; }
 }
+
